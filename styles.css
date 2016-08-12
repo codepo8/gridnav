@@ -107,7 +107,19 @@ pre {
 #links a:focus, #links a:hover{
   background: lightsalmon;
 }
-
+nav {
+  display: block;
+  border: 1px solid lightslategrey;
+  border-left: none;
+  border-right: none;
+  padding: .5em 0;
+}
+nav a {
+  color: darkslateblue;
+  text-decoration: none;
+  display: block;
+  line-height: 1.3em;
+}
 #smaller li {
   float: left;
   display: inline-block;
