@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyboard grid navigation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+  <h1>Keyboard grid navigation with gridnav.js</h1>
+  <h2>Demos</h2>
+  </header>
+  <section>
+    <pre>&lt;ul id="list" data-amount="8" data-element="button"&gt;</pre>
+
+
+    <div class="demo">
+<ul id="list" data-amount="8" data-element="button">
+  <li><button>0</button></li>
+  <li><button>1</button></li>
+  <li><button>2</button></li>
+  <li><button>3</button></li>
+  <li><button>4</button></li>
+  <li><button>5</button></li>
+  <li><button>6</button></li>
+  <li><button>7</button></li>
+  <li><button>8</button></li>
+  <li><button>9</button></li>
+  <li><button >10</button></li>
+  <li><button >11</button></li>
+  <li><button >12</button></li>
+  <li><button >13</button></li>
+  <li><button >14</button></li>
+  <li><button >15</button></li>
+  <li><button >16</button></li>
+  <li><button >17</button></li>
+  <li><button >18</button></li>
+  <li><button >19</button></li>
+  <li><button >20</button></li>
+  <li><button >21</button></li>
+  <li><button >22</button></li>
+  <li><button >23</button></li>
+  <li><button >24</button></li>
+  <li><button >25</button></li>
+  <li><button >26</button></li>
+  <li><button >27</button></li>
+  <li><button >28</button></li>
+  <li><button >29</button></li>
+  <li><button >30</button></li>
+  <li><button >31</button></li>
+</ul>
+</div>
+
+<pre>&lt;ul id="links" data-amount="5" data-element="a"&gt;</pre>
+
+<div class="demo">
+  <ul id="links" data-amount="5" data-element="a">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">6</a></li>
+  <li><a href="#">7</a></li>
+  <li><a href="#">8</a></li>
+  <li><a href="#">9</a></li>
+  <li><a href="#">10</a></li>
+  <li><a href="#">11</a></li>
+  <li><a href="#">12</a></li>
+  <li><a href="#">13</a></li>
+  <li><a href="#">14</a></li>
+  <li><a href="#">15</a></li>
+  <li><a href="#">16</a></li>
+  <li><a href="#">17</a></li>
+  <li><a href="#">18</a></li>
+  <li><a href="#">19</a></li>
+  <li><a href="#">20</a></li>
+  <li><a href="#">21</a></li>
+  <li><a href="#">22</a></li>
+  <li><a href="#">23</a></li>
+  <li><a href="#">24</a></li>
+  <li><a href="#">25</a></li>
+</ul>
+</div>
+</section>
+<footer>
+  <p>Written by <a href="http://twitter.com/codepo8">Chris Heilmann</a>. Hosted on GitHub</p>
+  <p>Thanks to <a href="http://twitter.com/heydon">Heydon Pickering</a> for the clever <a href="https://codepen.io/heydon/pen/bcdrl">CSS to do the grids with a certain amount</a></p>
+</footer>
+
+<script src="gridnav.js"></script>
+<script>
+  var buttonlist = new Gridnav('#list');
+  var linklist = new Gridnav('#links');
+</script>
+</body>
+</html>

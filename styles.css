@@ -1,0 +1,108 @@
+body,html {
+  background: floralwhite;
+  color: darkslategray;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+header, footer, section {
+  display: block;
+  margin: 2em;
+}
+h1 {
+  color: dodgerblue;
+  font-weight: lighter;
+}
+.demo {
+  clear: both;
+  margin: 2em;
+}
+pre {
+  text-align: center;
+  padding-top: 2em;
+  font-size: 20px;
+}
+.demo ul {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+pre {
+  clear: both;
+}
+.demo li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  display: block;
+}
+
+.demo li {
+  width: calc(100% / 8);
+}
+.demo li:nth-child(8n+1):nth-last-child(1) {
+  width: 100%;
+}
+.demo li:nth-child(8n+1):nth-last-child(1) ~ li {
+  width: 100%;
+}
+.demo li:nth-child(8n+1):nth-last-child(2) {
+  width: 50%;
+}
+.demo li:nth-child(8n+1):nth-last-child(2) ~ li {
+  width: 50%;
+}
+.demo li:nth-child(8n+1):nth-last-child(3) {
+  width: calc(100% / 8);
+}
+.demo li:nth-child(8n+1):nth-last-child(3) ~ li {
+  width: calc(100% / 8);
+}
+
+#links li {
+  width: calc(100% / 5);
+}
+#links li:nth-child(5n+1):nth-last-child(1) {
+  width: 100%;
+}
+#links li:nth-child(5n+1):nth-last-child(1) ~ li {
+  width: 100%;
+}
+#links li:nth-child(5n+1):nth-last-child(2) {
+  width: 50%;
+}
+#links li:nth-child(5n+1):nth-last-child(2) ~ li {
+  width: 50%;
+}
+#links li:nth-child(5n+1):nth-last-child(3) {
+  width: calc(100% / 5);
+}
+#links li:nth-child(8n+1):nth-last-child(3) ~ li {
+  width: calc(100% / 5);
+}
+
+.demo button, .demo a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  display: inline-block;
+  background: seagreen;
+  border: none;
+  margin: 5px;
+  padding: 20px 0;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  transform: scale(0.8);
+  transition: 300ms;
+}
+.demo button:focus, .demo button:hover, .demo a:focus, .demo a:hover {
+  background: lime;
+  transform: scale(1);
+}
+#links a {
+  color: white;
+  background: darkgoldenrod
+}
+#links a:focus, #links a:hover{
+  background: lightsalmon;
+}
