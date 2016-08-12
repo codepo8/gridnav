@@ -7,6 +7,7 @@ body,html {
 header, footer, section {
   display: block;
   margin: 2em;
+  clear: both;
 }
 h1 {
   color: dodgerblue;
@@ -81,7 +82,7 @@ pre {
   width: calc(100% / 5);
 }
 
-.demo button, .demo a {
+.demo button, .demo a, .borked a {
   text-align: center;
   text-decoration: none;
   font-size: 30px;
@@ -95,14 +96,30 @@ pre {
   transform: scale(0.8);
   transition: 300ms;
 }
-.demo button:focus, .demo button:hover, .demo a:focus, .demo a:hover {
+.demo button:focus, .demo button:hover, .demo a:focus, .demo a:hover, .borked a:focus, .borked a:hover{
   background: lime;
   transform: scale(1);
 }
 #links a {
   color: white;
-  background: darkgoldenrod
+  background: darkgoldenrod;
 }
 #links a:focus, #links a:hover{
   background: lightsalmon;
 }
+
+#smaller li {
+  float: left;
+  display: inline-block;
+  list-style: none;
+  width: 100px;
+}
+#smaller a {
+  color: white;
+  background: darkblue;
+}
+#smaller a:focus, #smaller a:hover{
+  background: dodgerblue;
+}
+
+

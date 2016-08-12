@@ -8,28 +8,29 @@
 */
 
 var Gridnav = function(listelement){
+  var that = this;
   this.list = document.querySelector(listelement);
 
   if(!this.list) {
     throw Error('List item could not be found');
-  } else {
-    if (!this.list.getAttribute('data-element')) {
-      throw Error('You did not define an element');
-    }
-    if (!this.list.getAttribute('data-amount')) {
-      throw Error('You did not define the amount of elements');
-    }
   }
-  this.element = this.list.getAttribute('data-element').toUpperCase();
-  this.amount = +this.list.getAttribute('data-amount');
-
-  /* Coming soon? dynamic grids :)
-  this.amount = parseInt(this.list.offsetWidth / this.list.querySelector(":first-of-type").offsetWidth,10);
-  */
-
+  this.getamount = function() {
+    that.amount = parseInt(that.list.offsetWidth / that.list.firstElementChild.offsetWidth, 10);
+    that.codes = {39:1, 37:-1, 38:-that.amount, 40:that.amount};
+  }
+  if (!this.list.getAttribute('data-element')) {
+    this.element = this.list.firstElementChild.firstElementChild.tagName;
+  } else {
+    this.element = this.list.getAttribute('data-element').toUpperCase();
+  }
+  if (!this.list.getAttribute('data-amount')) {
+    this.getamount();
+    window.addEventListener('resize', that.getamount);
+  } else {
+    this.amount = +this.list.getAttribute('data-amount');
+  }
   this.codes = {39:1, 37:-1, 38:-this.amount, 40:this.amount};
   this.all = this.list.querySelectorAll(this.element);
-  var that = this;
   this.keynav = function(ev) {
     var t = ev.target;
     if (t.tagName === that.element) {
