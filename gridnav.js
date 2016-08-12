@@ -7,15 +7,17 @@
   Version:  1.0.0
 */
 
-var Gridnav = function(listelement){
+var Gridnav = function(listelement) {
   var that = this;
   this.list = document.querySelector(listelement);
 
-  if(!this.list) {
+  if (!this.list) {
     throw Error('List item could not be found');
   }
   this.getamount = function() {
-    that.amount = parseInt(that.list.offsetWidth / that.list.firstElementChild.offsetWidth, 10);
+    that.amount = Math.floor(
+      that.list.offsetWidth / that.list.firstElementChild.offsetWidth
+    );
     that.codes = {39:1, 37:-1, 38:-that.amount, 40:that.amount};
   }
   if (!this.list.getAttribute('data-element')) {
@@ -42,10 +44,10 @@ var Gridnav = function(listelement){
       }
       if (that.codes[ev.keyCode]) {
         if (that.all[c + that.codes[ev.keyCode]]) {
-          that.all[c + that.codes[ev.keyCode]].focus()
+          that.all[c + that.codes[ev.keyCode]].focus();
         }
       }
     }
   }
-  this.list.addEventListener('keyup',this.keynav);
+  this.list.addEventListener('keyup', this.keynav);
 };
