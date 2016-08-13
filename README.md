@@ -1,10 +1,20 @@
 # gridnav.js - allow for more convenient keyboard navigation of lists
 
-I AM STILL WRITING THIS!
+```Gridnav``` is a JavaScript that allows users to navigate around a list of items easier and in a more accessible manner. Given that your list consists of keyboard accessible elements, the normal way to navigate them is by tabbing to each element in order. You can also shift-tab to go back. This works, but can be cumbersome:
 
 ![Navigating a grid with up, down, left and right](tabbing.gif)
 
+Wouldn't it be easier to be able to navigate the list with the arrow keys or WASD navigation? It makes it much easier to reach items deeper in the list:
+
 ![Navigating a grid with up, down, left and right](grid.gif)
+
+```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document.
+
+```xml
+<script src="gridnav.js"></script>
+``` 
+
+You can see ```gridnav``` in action [on this demo page](https://codepo8.github.io/gridnav/#list).
 
 In [the first demo](https://codepo8.github.io/gridnav/#list) we define the amount of elements per row and which element is the one that should get keyboard navigation. In this case, eight items and buttons as elements. You define these as ```data attributes``` in your HTML:
 
@@ -46,7 +56,7 @@ You enable it by instantiating ```gridnav``` once more:
 var linklist = new Gridnav('#links');
 ```
 
-Defining the amount of elements per row and the element that is keyboard accessible makes it faster and easier to add the functionality. You can however also omit those like in the [third demo](https://codepo8.github.io/gridnav/#smaller). In this case, ```gridnav``` detects the interactive element as the first child node of the first child of the list and calculates the amount of elements automatically.
+Defining the amount of elements per row and the element that is keyboard accessible makes it faster and easier to add the functionality. You can however also omit those as you can see in the [third demo](https://codepo8.github.io/gridnav/#smaller). In this case, ```gridnav``` detects the interactive element as the first child node of the first child of the list and calculates the amount of elements automatically.
 
 ```xml
 <ul id="smaller">
