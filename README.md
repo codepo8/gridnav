@@ -1,4 +1,4 @@
-# :keyboard: gridnav.js - allow for more convenient keyboard navigation of lists
+# gridnav.js - allow for more convenient keyboard navigation of lists
 
 I AM STILL WRITING THIS!
 
