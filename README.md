@@ -8,7 +8,7 @@ Wouldn't it be easier to be able to navigate the list with the arrow keys or WAS
 
 ![Navigating a grid with up, down, left and right](grid.gif)
 
-```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document.
+```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document. Notice that this is a progressive enhancement - if anything goes wrong with your JavaScript execution, you can still tab through the list. 
 
 ```xml
 <script src="gridnav.js"></script>
