@@ -18,7 +18,12 @@ var Gridnav = function(listelement) {
     that.amount = Math.floor(
       that.list.offsetWidth / that.list.firstElementChild.offsetWidth
     );
-    that.codes = {39:1, 37:-1, 38:-that.amount, 40:that.amount};
+    that.codes = {
+      39:1, 68:1,
+      65:-1, 37:-1,
+      87:-that.amount, 38:-that.amount,
+      83: that.amount, 40:that.amount
+    };
   }
   if (!this.list.getAttribute('data-element')) {
     this.element = this.list.firstElementChild.firstElementChild.tagName;
@@ -31,7 +36,12 @@ var Gridnav = function(listelement) {
   } else {
     this.amount = +this.list.getAttribute('data-amount');
   }
-  this.codes = {39:1, 37:-1, 38:-this.amount, 40:this.amount};
+  this.codes = {
+    39:1, 68:1,
+    65:-1, 37:-1,
+    87:-this.amount, 38:-this.amount,
+    83: this.amount, 40:this.amount
+  };
   this.all = this.list.querySelectorAll(this.element);
   this.keynav = function(ev) {
     var t = ev.target;

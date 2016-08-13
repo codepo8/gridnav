@@ -9,9 +9,15 @@ header, footer, section {
   margin: 2em;
   clear: both;
 }
-h1 {
+p a {
+  color: #369;
+}
+h1, h2 {
   color: dodgerblue;
   font-weight: lighter;
+}
+h2 {
+  margin: 0;
 }
 .demo {
   clear: both;
@@ -107,12 +113,18 @@ pre {
 #links a:focus, #links a:hover{
   background: lightsalmon;
 }
-nav {
+header {
+  position: relative;
+  padding-right: 35%;
+}
+#demos {
+  position: absolute;
+  right: 0;
+  top: 3em;
+  width: 30%;
   display: block;
   border: 1px solid lightslategrey;
-  border-left: none;
-  border-right: none;
-  padding: .5em 0;
+  padding: .5em;
 }
 nav a {
   color: darkslateblue;
