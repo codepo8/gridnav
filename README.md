@@ -8,11 +8,11 @@ Wouldn't it be easier to be able to navigate the list with the arrow keys or WAS
 
 ![Navigating a grid with up, down, left and right](grid.gif)
 
-```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document. Notice that this is a progressive enhancement - if anything goes wrong with your JavaScript execution, you can still tab through the list. 
+```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document. Notice that this is a progressive enhancement - if anything goes wrong with your JavaScript execution, you can still tab through the list.
 
 ```xml
 <script src="gridnav.js"></script>
-``` 
+```
 
 You can see ```gridnav``` in action [on this demo page](https://codepo8.github.io/gridnav/#list).
 
@@ -71,3 +71,6 @@ var smalllist = new Gridnav('#smaller');
 ```
 > :warning: :exclamation: Whilst this is a lot easier, it is also more expensive and may result in errors. ```gridnav``` calculates the amount of elements by reading the width of the list element and one of its child elements and dividing them. This means you need to ensure that your list items are all the same width and the script needs to recalculate on every window resize.
 
+# Support
+
+This was tested on the current Firefox, Chrome, Opera, Safari, Edge and IE11.
