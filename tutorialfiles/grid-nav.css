@@ -1,0 +1,30 @@
+body {
+  background: dimgrey;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  float: left;
+}
+ul {
+  width: 250px;
+}
+button {
+  color: #fff;
+  background: #000;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 50% 50%;
+}
+button:focus {
+  color: #000;
+  background: #fff;
+}

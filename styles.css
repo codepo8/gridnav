@@ -84,7 +84,7 @@ pre {
 #links li:nth-child(5n+1):nth-last-child(3) {
   width: calc(100% / 5);
 }
-#links li:nth-child(8n+1):nth-last-child(3) ~ li {
+#links li:nth-child(5n+1):nth-last-child(3) ~ li {
   width: calc(100% / 5);
 }
 

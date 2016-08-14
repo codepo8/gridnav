@@ -2,11 +2,11 @@
 
 ```Gridnav``` is a JavaScript that allows users to navigate around a list of items easier and in a more accessible manner. Given that your list consists of keyboard accessible elements, the normal way to navigate them is by tabbing to each element in order. You can also shift-tab to go back. This works, but can be cumbersome:
 
-![Navigating a grid with up, down, left and right](tabbing.gif)
+![Navigating a grid with up, down, left and right](images/tabbing.gif)
 
 Wouldn't it be easier to be able to navigate the list with the arrow keys or WASD navigation? It makes it much easier to reach items deeper in the list:
 
-![Navigating a grid with up, down, left and right](grid.gif)
+![Navigating a grid with up, down, left and right](images/grid.gif)
 
 ```Gridnav``` does that for you. It is a plain vanilla, 50 lines JavaScript solution without any dependencies. All you need to do, is to add it to the document you want to enhance with this type of navigation and instantiate it with a reference to a sensible HTML navigation construct in your document. Notice that this is a progressive enhancement - if anything goes wrong with your JavaScript execution, you can still tab through the list.
 

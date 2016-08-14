@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyboard grid navigation</title>
+  <style>
+    body {
+      background: #999;
+    }
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul {
+      width: 250px;
+    }
+    li {
+      float: left;
+    }
+    button {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      font-size: 20px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 50% 50%;
+    }
+    button:focus {
+      background: #fff;
+      color: #000;
+    }
+    ul#inline {
+      margin: 0;
+      width: 100%;
+      clear: both;
+      padding: 2em 0;
+    }
+    #inline button {
+      background: #369;
+      border-radius: 0;
+      width: 10px;
+      height: 10px;
+    }
+    #inline button.current {
+      background: gold;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+<ul>
+  <li><button>1</button></li>
+  <li><button>2</button></li>
+  <li><button>3</button></li>
+  <li><button>4</button></li>
+  <li><button>5</button></li>
+  <li><button>6</button></li>
+  <li><button>7</button></li>
+  <li><button>8</button></li>
+  <li><button>9</button></li>
+  <li><button>10</button></li>
+  <li><button>11</button></li>
+  <li><button>12</button></li>
+  <li><button>13</button></li>
+  <li><button>14</button></li>
+  <li><button>15</button></li>
+  <li><button>16</button></li>
+  <li><button>17</button></li>
+  <li><button>18</button></li>
+  <li><button>19</button></li>
+  <li><button>20</button></li>
+  <li><button>21</button></li>
+  <li><button>22</button></li>
+  <li><button>23</button></li>
+  <li><button>24</button></li>
+  <li><button>25</button></li>
+</ul>
+
+<script>
+(function(){
+  var list = document.querySelector('ul');
+  var width = list.offsetWidth;
+  var itemwidth = list.firstElementChild.offsetWidth;
+  var addto = Math.floor(width / itemwidth);
+  var allbuttons = list.querySelectorAll('button');
+  var all = allbuttons.length;
+  var codes = {
+    40: addto, 
+    38: -addto,
+    39: 1,
+    37: -1
+  }
+  function getkey(ev) {
+    var current = ev.target;
+    for (var i = 0; i < all; i++) {
+      if (allbuttons[i] === current) {
+        break;
+      }
+    }
+    if (allbuttons[i + codes[ev.keyCode]]) {
+      allbuttons[i + codes[ev.keyCode]].focus();
+    }
+  }
+  list.addEventListener('keyup', getkey);
+})();
+</script>
+
+
+</body>
+</html>
