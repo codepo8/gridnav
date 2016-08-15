@@ -23,7 +23,7 @@
   </ul></nav>
   </div>
   </header>
-  <section>
+  <section id="gridnavs">
     <pre>&lt;ul id="list" data-amount="8" data-element="button"&gt;</pre>
     <div class="demo">
       <ul id="list" data-amount="8" data-element="button">
@@ -148,6 +148,13 @@
           window.scrollTo(0, elm.offsetTop);
           elm.children[0].children[0].focus();
         }
+      }
+    );
+
+    // Prevent anchor navigation
+    document.querySelector('#gridnavs').
+      addEventListener('click',function(ev) {
+        ev.preventDefault();
       }
     );
   </script>
