@@ -57,5 +57,5 @@ var Gridnav = function (listelement) {
       }
     }
   }
-  this.list.addEventListener('keypress', this.keynav);
+  this.list.addEventListener('keyup', this.keynav);
 };
