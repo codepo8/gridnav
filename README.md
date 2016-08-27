@@ -14,7 +14,9 @@ Wouldn't it be easier to be able to navigate the list with the arrow keys or WAS
 <script src="gridnav.js"></script>
 ```
 
-You can see ```gridnav``` in action [on this demo page](https://codepo8.github.io/gridnav/#list).
+```Gridnav``` automatically applies itself to any list with a class of ```gridnav```, or you can explicitly create your own instances in JavaScript.
+
+You can see ```Gridnav``` in action [on this demo page](https://codepo8.github.io/gridnav/#list).
 
 In [the first demo](https://codepo8.github.io/gridnav/#list) we define the amount of elements per row and which element is the one that should get keyboard navigation. In this case, eight items and buttons as elements. You define these as ```data attributes``` in your HTML:
 
@@ -42,7 +44,7 @@ var buttonlist = new Gridnav('.demo ul');
 [The second demo](https://codepo8.github.io/gridnav/#links) uses links and five elements per row.
 
 ```xml
-<ul id="links" data-amount="5" data-element="a">
+<ul id="links" class="gridnav" data-amount="5" data-element="a">
   <li><a href="#">1</a></li>
   <li><a href="#">2</a></li>
 …
@@ -50,11 +52,7 @@ var buttonlist = new Gridnav('.demo ul');
 </ul>
 ```
 
-You enable it by instantiating ```gridnav``` once more:
-
-```javascript
-var linklist = new Gridnav('#links');
-```
+This one didn't need any instantiating in JavaScript, the ```gridnav``` class took care of that.
 
 Defining the amount of elements per row and the element that is keyboard accessible makes it faster and easier to add the functionality. You can however also omit those as you can see in the [third demo](https://codepo8.github.io/gridnav/#smaller). In this case, ```gridnav``` detects the interactive element as the first child node of the first child of the list and calculates the amount of elements automatically.
 

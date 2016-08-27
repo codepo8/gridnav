@@ -9,8 +9,9 @@
 
 var Gridnav = function (listelement) {
   var that = this;
-  this.list = document.querySelector(listelement);
-
+  this.list = (typeof listelement) === 'string' ? 
+              document.querySelector(listelement) :
+              listelement;
   if (!this.list) {
     throw Error('List item could not be found');
   }
@@ -59,3 +60,10 @@ var Gridnav = function (listelement) {
   }
   this.list.addEventListener('keyup', this.keynav);
 };
+Gridnav.lists = [];
+
+
+[].forEach.call(document.querySelectorAll('.gridnav'), function (item, key) {
+  Gridnav.lists[key] = new Gridnav(item);
+
+});
