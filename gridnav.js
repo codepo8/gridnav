@@ -23,37 +23,49 @@ var Gridnav = function (listelement) {
       83: that.amount, 40:that.amount
     };
   }
-  this.getamount = function () {
-    that.amount = Math.floor(
-      that.list.offsetWidth / that.list.firstElementChild.offsetWidth
-    );
-    that.setcodes(that.amount);
-  }
   if (!this.list.getAttribute('data-element')) {
     this.element = this.list.firstElementChild.firstElementChild.tagName;
   } else {
     this.element = this.list.getAttribute('data-element').toUpperCase();
   }
   if (!this.list.getAttribute('data-amount')) {
-    this.getamount();
-    window.addEventListener('resize', that.getamount);
+    this.amount = 6502;
+    this.setcodes(this.amount);
   } else {
     this.amount = +this.list.getAttribute('data-amount');
+    this.setcodes(this.amount);
   }
   this.setcodes(this.amount);
   this.all = this.list.querySelectorAll(this.element);
   this.keynav = function(ev) {
     var t = ev.target;
+    var c;
+    var posx, posy;
     if (t.tagName === that.element) {
       for (var i = 0; i < that.all.length; i++) {
         if (that.all[i] === t) {
           c = i;
+          posx = that.all[c].offsetLeft;
+          posy = that.all[c].offsetTop;
           break;
         }
       }
       if (that.codes[ev.keyCode]) {
-        if (that.all[c + that.codes[ev.keyCode]]) {
-          that.all[c + that.codes[ev.keyCode]].focus();
+        var kc = that.codes[ev.keyCode];
+        if (kc > -6502 && kc < 6502) {
+          if (that.all[c + kc]) {
+            that.all[c + kc].focus();
+          }
+        } else {
+          var add = kc < 0 ? -1 : 1;
+          while (that.all[i]) {
+            if (that.all[i].offsetLeft === posx && 
+                that.all[i].offsetTop !== posy) {
+              that.all[i].focus();
+              break;
+            }
+            i += add;
+          }
         }
       }
     }
@@ -62,8 +74,6 @@ var Gridnav = function (listelement) {
 };
 Gridnav.lists = [];
 
-
 [].forEach.call(document.querySelectorAll('.gridnav'), function (item, key) {
   Gridnav.lists[key] = new Gridnav(item);
-
 });

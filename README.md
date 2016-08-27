@@ -67,7 +67,7 @@ Defining the amount of elements per row and the element that is keyboard accessi
 ```javascript
 var smalllist = new Gridnav('#smaller');
 ```
-> :warning: :exclamation: Whilst this is a lot easier, it is also more expensive and may result in errors. ```gridnav``` calculates the amount of elements by reading the width of the list element and one of its child elements and dividing them. This means you need to ensure that your list items are all the same width and the script needs to recalculate on every window resize.
+> :warning: :exclamation: Whilst this is a lot easier, it is also more expensive. ```gridnav``` finds the element to move to by comparing the position on screen. This means you need to ensure that your list items are all the same width.
 
 # Support
 
